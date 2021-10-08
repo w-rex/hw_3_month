@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog detail</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2>{{ blog.title }}</h2>
+        <img src="{{ blog.image.url }}" alt="">
+        <p>{{ blog.description }}</p>
+        <p>Likes: {{ blog.likes }}</p>
+        <p>Reposts: {{ blog.reposts }}</p>
+    </div>
+</body>
+</html>

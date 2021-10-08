@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Blog, Welcome</title>
+</head>
+<body style="background: #c2b8ba">
+    <section>
+        <div>
+            <h1 style="text-align: center; color: white ">
+                Hello every one it's my blog
+            </h1>
+        </div>
+        <div class="section_blog">
+            <div class="text">
+                <h1 style="font-family: 'Arial Black'; text-align: center; padding: 60px">In this lent have blogs</h1>
+            </div>
+            <div style="padding-left: 300px">
+                <ul style="list-style: none">
+                    {% for i in blog %}
+                    <li>
+                        <div>
+                            <h2>{{i.title}}</h2>
+                            <p>
+                                <img src="{{ i.image.url }}" alt="" width="400px" height="500px">
+                            </p>
+                            <span>Likes: {{ i.likes }}</span>
+                            <br>
+                            <span>Reposts: {{ i.reposts }}</span>
+                            <p style="color: white">{{ i.description }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
