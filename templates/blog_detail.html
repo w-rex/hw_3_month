@@ -8,12 +8,39 @@
     <title>Blog detail</title>
 </head>
 <body>
-    <div style="text-align: center">
-        <h2>{{ blog.title }}</h2>
-        <img src="{{ blog.image.url }}" alt="">
-        <p>{{ blog.description }}</p>
-        <p>Likes: {{ blog.likes }}</p>
-        <p>Reposts: {{ blog.reposts }}</p>
-    </div>
+
+        <div style="text-align: center">
+            <a href="{{blog.id}}/change"><button>Change</button></a>
+            <h2>{{ blog.title }}</h2>
+            <img style="width: 400px; height: 500px" src="{{ blog.image.url }}" alt="">
+            <p>{{ blog.description }}</p>
+            <p>Likes: {{ blog.likes }}</p>
+            <p>Reposts: {{ blog.reposts }}</p>
+
+            <div>
+                <form action="/blog/{{ blog.id }}" method="post">
+                    {% csrf_token %}
+                    <label>
+                        <input name="comment" type="text">
+                        <br>
+                        <input type="submit" value="Submit your comment">
+                    </label>
+                </form>
+            </div>
+            <div>
+                <ol>
+                    {% for i in comments %}
+                    <li>
+                        <h3>
+                            {{ i.text }}
+                        </h3>
+                        <span>
+                            {{ i.date }}
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
 </body>
 </html>

@@ -11,3 +11,9 @@ class Blog(models.Model):
     likes = models.IntegerField(default=0)
 
 
+class Comments(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
+    text = models.CharField(max_length=150)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+
+

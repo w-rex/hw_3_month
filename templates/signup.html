@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div>
+        <form action="/users/signup" method="post">
+            {% csrf_token %}
+            <label>
+                Username
+                <input name="username" type="text">
+            </label>
+            <br>
+            <label>
+                First Name
+                <input name="first_name" type="text">
+            </label>
+            <br>
+            <label>
+                Last Name
+                <input name="last_name" type="text">
+            </label>
+            <br>
+            <label>
+                Email
+                <input name="email" type="text">
+            </label>
+            <br>
+            <label>
+                Password
+                <input name="password1" type="password">
+            </label>
+            <br>
+            <label>
+                Repeat Password
+                <input name="password2" type="password">
+            </label>
+            <br>
+            <input value="Please submit" type="submit">
+        </form>
+    </div>
+</body>
+</html>
